@@ -1,0 +1,19 @@
+$minHeight: 100PX;
+
+.el-row {
+  min-height: $minHeight;
+  margin: 0 0 20PX 0 !important;
+  // background: #F5F5F5;
+  .el-col {
+    min-height: $minHeight;
+    margin-left: -1PX;
+    padding-top: 40PX;
+    border: 1PX dashed #304156;
+    .content {
+      min-height: $minHeight;
+    }
+  }
+}
+.move {
+  cursor: pointer;
+}

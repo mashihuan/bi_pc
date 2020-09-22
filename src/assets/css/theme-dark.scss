@@ -1,0 +1,83 @@
+$header-bg: #111842;      // header背景
+$menu-active-bg: #292f55; // 导航选中背景
+$content-bg: #070b1f;     // 主内容背景
+
+// 图表四个角样式
+$cornerColor: #1F65EB;
+$cornerWidth: 1px;
+$cornerSize: 0.0625rem;
+
+.theme-dark {
+  #app {
+    // 背景
+    background: $content-bg;
+    > .el-container {
+      background: $content-bg;
+      > .el-header {
+        background: $header-bg;
+        .menu-item.active {
+          background: $menu-active-bg;
+        }
+      }
+    }
+    // 图表样式
+    .chart-wrapper {
+      border-radius: 0;
+      box-shadow: none;
+      background: linear-gradient(180deg,rgba(2,49,250,0),rgba(2,64,250,.2));
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: $cornerSize;
+          height: $cornerSize;
+        }
+        &:before {
+          top: 0;
+          left: 0;
+          border-top: $cornerWidth solid $cornerColor;
+          border-left: $cornerWidth solid $cornerColor;
+        }
+        &:after {
+          top: 0;
+          right: 0;
+          border-top: $cornerWidth solid $cornerColor;
+          border-right: $cornerWidth solid $cornerColor;
+        }
+      .chart-inner {
+        .title {
+          padding-top: 0.078125rem;
+          padding-bottom: 0.026042rem;
+          color: #fff;
+          border-bottom: none;
+        }
+        &:before, &:after {
+          position: absolute;
+          content: '';
+          width: $cornerSize;
+          height: $cornerSize;
+        }
+        &:before {
+          bottom: 0;
+          left: 0;
+          border-bottom: $cornerWidth solid $cornerColor;
+          border-left: $cornerWidth solid $cornerColor;
+        }
+        &:after {
+          bottom: 0;
+          right: 0;
+          border-bottom: $cornerWidth solid $cornerColor;
+          border-right: $cornerWidth solid $cornerColor;
+        }
+      }
+
+    }
+    // loading颜色
+    .spinner > div {
+      background: #fff;
+    }
+  }
+  // header右侧下拉样式
+  .el-dropdown-menu {
+    background: $header-bg;
+  }
+}
